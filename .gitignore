@@ -146,6 +146,7 @@ tags
 #### visualstudiocode ####
 .vscode/*
 
+lib
 dist
 .idea
 

@@ -2,14 +2,17 @@
   "name": "next-csrf",
   "version": "0.1.1",
   "description": "CSRF mitigation library for Next.js",
-  "main": "dist/next-csrf.js",
-  "module": "dist/next-csrf.esm.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
   "source": "src/index.ts",
   "repository": "https://github.com/j0lv3r4/next-csrf",
   "author": "Juan Olvera",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "dev": "rollup -w",
     "test": "jest",
     "release": "cross-var npm run build && cross-var git commit -am $npm_package_version && cross-var git tag $npm_package_version && git push && git push --tags && npm publish"
