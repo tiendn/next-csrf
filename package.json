@@ -8,12 +8,13 @@
     "lib/"
   ],
   "source": "src/index.ts",
-  "repository": "https://github.com/j0lv3r4/next-csrf",
+  "repository": "https://github.com/tiendn/next-csrf",
   "author": "Juan Olvera",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
-    "prepublishOnly": "npm run tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
     "dev": "rollup -w",
     "test": "jest",
     "release": "cross-var npm run build && cross-var git commit -am $npm_package_version && cross-var git tag $npm_package_version && git push && git push --tags && npm publish"
