@@ -2,14 +2,19 @@
   "name": "next-csrf",
   "version": "0.1.1",
   "description": "CSRF mitigation library for Next.js",
-  "main": "dist/next-csrf.js",
-  "module": "dist/next-csrf.esm.js",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
   "source": "src/index.ts",
-  "repository": "https://github.com/j0lv3r4/next-csrf",
+  "repository": "https://github.com/tiendn/next-csrf",
   "author": "Juan Olvera",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
     "dev": "rollup -w",
     "test": "jest",
     "release": "cross-var npm run build && cross-var git commit -am $npm_package_version && cross-var git tag $npm_package_version && git push && git push --tags && npm publish"
@@ -22,7 +27,7 @@
     "@types/cookie": "^0.4.0",
     "@types/cookie-signature": "^1.0.3",
     "@types/csrf": "^1.3.2",
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^^26.0.15",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
