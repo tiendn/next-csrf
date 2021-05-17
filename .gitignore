@@ -153,5 +153,4 @@ dist
 .now
 
 package-lock.json
-yarn.lock
 lib
