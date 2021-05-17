@@ -1,5 +1,5 @@
 {
-  "name": "next-csrf",
+  "name": "@tiendn/next-csrf",
   "version": "0.1.1",
   "description": "CSRF mitigation library for Next.js",
   "main": "lib/cjs/index.js",
